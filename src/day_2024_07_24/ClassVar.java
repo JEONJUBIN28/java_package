@@ -42,6 +42,9 @@ class AA{
 	
 	public void println() {
 		System.out.println("메롱!!");
+		System.out.println("메롱!!");
+		System.out.println("메롱!!");
+		
 	}
 }
 
