@@ -2,7 +2,7 @@ package day_2024_07_29;
 
 import java.util.Arrays;
 
-public class TestMain {
+public class LottoMain {
 
 	public static void main(String[] args) {	
 		String[] sr = new String[4];
@@ -48,6 +48,5 @@ public class TestMain {
 			}
 		}
 		System.out.println(Arrays.toString(arrLotto));
-		
 	}
 }
