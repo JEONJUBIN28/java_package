@@ -1,5 +1,4 @@
-package day_2024_07_30;
-
+package day_2024_08_01;
 
 /*기능 : 지정된 물건을 구입한다. 가진 돈(money)에서 물건의 가격을 빼고, 장바구니(cart)에 담는다.
 *만일 가진 돈이 물건의 가격보다 적다면 바로 종료한다.
@@ -8,10 +7,10 @@ package day_2024_07_30;
 class Buyer {
 
 	int money = 1000;
-	Product2[] cart = new Product2[3]; // 구입한 제품을 저장하기 위한 배열
+	Product[] cart = new Product[3]; // 구입한 제품을 저장하기 위한 배열
 	int i = 0; // Product배열 cart에 사용될 index
 
-	void buy(Product2 p) {
+	void buy(Product p) {
 
 		/*
 		 * 
@@ -37,7 +36,7 @@ class Buyer {
 	 * 반환타입 : 없음 
 	 * 매개변수 : Product p - 구입할 물건
 	 */
-	void add(Product2 p) {
+	void add(Product p) {
 
 		/*
 		 * 
@@ -49,10 +48,10 @@ class Buyer {
 		 * 그리고 i의 값을 1 증가시킨다.
 		 * 
 		 */
-		Product2[] newCart=null;
+		Product[] newCart=null;
 		
 		if(i >= cart.length) {
-			newCart = new Product2[cart.length*2];
+			newCart = new Product[cart.length*2];
 			/*기존에 담겨 있던거를 새로운 cart로 옮겨야함*/
 			for(int idx = 0; idx < cart.length; idx++) {
 				newCart[idx]=cart[idx];
@@ -96,17 +95,17 @@ class Buyer {
 
 }
 
-class Product2 {
+class Product {
 	int price; // 제품의 가격
 
-	Product2(int price) {
+	Product(int price) {
 		this.price = price;
 	}
 }
 
-class Tv2 extends Product2 {
+class Tv extends Product {
 
-	Tv2() {
+	Tv() {
 		super(100);
 	}
 
@@ -115,7 +114,7 @@ class Tv2 extends Product2 {
 	}
 }
 
-class Computer extends Product2 {
+class Computer extends Product {
 
 	Computer() {
 		super(200);
@@ -126,7 +125,7 @@ class Computer extends Product2 {
 	}
 }
 
-class Audio extends Product2 {
+class Audio extends Product {
 
 	Audio() {
 		super(50);
@@ -138,19 +137,20 @@ class Audio extends Product2 {
 
 }
 
-public class ExerciseMain {
+public class BuyerMain {
 
 	public static void main(String[] args) {
-		
+
 		Buyer b = new Buyer();
-		b.buy(new Tv2());
+		b.buy(new Tv());
 		b.buy(new Computer());
-		b.buy(new Tv2());
+		b.buy(new Tv());
 		b.buy(new Audio());
 		b.buy(new Computer());
 		b.buy(new Computer());
 		b.buy(new Computer());
 
 		b.summary();
+
 	}
 }

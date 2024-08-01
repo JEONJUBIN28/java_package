@@ -9,7 +9,7 @@ class Circle4 {
 	}
 
 	public String toString() {
-		return "넓이는 "+ (radius * radius * Math.PI) +"입니다.";
+		return "넓이는 "+ "100" +"입니다.";
 	}
 }
 public class CircleMain2 {
