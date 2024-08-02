@@ -1,5 +1,7 @@
 package day_2024_08_01;
 
+import java.util.Scanner;
+
 class Person {
 	String name;
 	int age;
@@ -25,19 +27,10 @@ class Student extends Person{
 		this.school=school;
 	}
 	
-	public void showInfo() {
-		System.out.println("1학기 학점"+"->"+"3.37");
-		System.out.println("2학기 학점"+"->"+"3.89");
-		System.out.println("3학기 학점"+"->"+"4.35");
-		System.out.println("4학기 학점"+"->"+"3.76");
-		System.out.println("5학기 학점"+"->"+"3.89");
-		System.out.println("6학기 학점"+"->"+"4.26");
-		System.out.println("7학기 학점"+"->"+"4.89");
-		System.out.println("8학기 학점"+"->"+"3.89");
+	public void showInfo() {	
 	}
 	
 	public void average() {
-		System.out.println("8학기 총 평균 평점은"+ "4.0375점입니다.");
 	}
 	
 }
@@ -47,10 +40,34 @@ class Student extends Person{
 public class StudentMain {
 
 	public static void main(String[] args) {
-		
 		Student stu = new Student("김다정", 20, "서울시", "동양서울대학교", "전산정보학과", 20132222);
         stu.showInfo();
         stu.average();
+        
+        final int COUNT = 8;
+		double[] arrGrade=new double[COUNT];
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("8학기 학점을 순서대로 입력하세요");
+		double sum = 0;
+		for(int i = 1; i<arrGrade.length;i++) {
+			System.out.println(i+"학기 학점 ->");
+			
+			
+			try {
+				arrGrade[i]=sc.nextDouble();
+				sum += arrGrade[i];
+				
+			}catch(Exception e){
+				System.out.println("잘못된입력입니다. 다시 입력해 주세요.");
+				i--;
+				sc.nextLine();//한줄을 지우는것이기에 오류가 안난다.
+				continue;
+			}
+			
+		}
+		
+		System.out.println("총점 "+sum+" 평균 "+(sum/arrGrade.length));
 
 	}
 }
