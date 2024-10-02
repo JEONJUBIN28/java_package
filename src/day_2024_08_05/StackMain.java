@@ -120,52 +120,52 @@ class StringStack2 implements Stack {
 public class StackMain {
 	public static void main(String[] args) {
 
-		StringStack2 stack2 = new StringStack2();
+//		StringStack2 stack2 = new StringStack2();
+//
+//		stack2.push("메롱");
+//		stack2.push("메롱");
+//		stack2.push("메롱");
+//		stack2.push("메롱");
+//		stack2.push("메롱");
+//		stack2.push("메롱");
+//		stack2.push("메롱");
+//		stack2.push("메롱");
+//
+//		int length = stack2.length();
+//
+//		for (int i = 0; i < length; i++) {
+//			System.out.print(stack2.pop() + " ");
+//		}
 
-		stack2.push("메롱");
-		stack2.push("메롱");
-		stack2.push("메롱");
-		stack2.push("메롱");
-		stack2.push("메롱");
-		stack2.push("메롱");
-		stack2.push("메롱");
-		stack2.push("메롱");
+		Scanner sc = new Scanner(System.in);
+		StringStack stack;
 
-		int length = stack2.length();
+		System.out.print("총 스택 저장 공간의 크기 입력>>");
+		stack = new StringStack(sc.nextInt());
 
-		for (int i = 0; i < length; i++) {
-			System.out.print(stack2.pop() + " ");
+		while (true) {
+
+			System.out.print("문자열 입력");
+			String str = sc.next();
+
+			if (str.equals("그만")) {
+				break;
+			}
+
+			boolean isFull = stack.push(str);
+
+			if (isFull == false) {
+				System.out.println("스택이 꽉 차서 푸시불가!");
+			}
 		}
 
-//		Scanner sc = new Scanner(System.in);
-//		StringStack stack;
-//
-//		System.out.print("총 스택 저장 공간의 크기 입력>>");
-//		stack = new StringStack(sc.nextInt());
-//
-//		while (true) {
-//
-//			System.out.print("문자열 입력");
-//			String str = sc.next();
-//
-//			if (str.equals("그만")) {
-//				break;
-//			}
-//
-//			boolean isFull = stack.push(str);
-//
-//			if (isFull == false) {
-//				System.out.println("스택이 꽉 차서 푸시불가!");
-//			}
-//		}
-//
-//		System.out.println("스택에 저장된 모든 문자열 팝: ");
-//
-//		int length = stack.length();
-//
-//		for (int i = 0; i < stack.length(); i++) {
-//			System.out.print(stack.pop() + " /");
-//		}
+		System.out.println("스택에 저장된 모든 문자열 팝: ");
+
+		int length = stack.length();
+
+		for (int i = 0; i < stack.length(); i++) {
+			System.out.print(stack.pop() + " /");
+		}
 
 	}
 

@@ -1,6 +1,7 @@
 package day_2024_07_26;
 
 import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class LottoMain {

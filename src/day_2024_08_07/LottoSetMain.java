@@ -15,6 +15,8 @@ public class LottoSetMain {
 			lottoSet.add(num);
 		}
 		
+		
+		
 		System.out.println(lottoSet);
 
 //		for (Integer s : lottoSet) {
